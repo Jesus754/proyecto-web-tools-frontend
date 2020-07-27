@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+.main.container {
+    margin-top: 40px;
+}
+
+body { 
+
+  background: url(./assets/fondo.jpg) no-repeat center top;
+  background-size: cover;
+  background-color:transparent;
+  
+}
+
+footer {
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+@font-face {
+  font-family: 'Signatura Monoline';
+  src: local('Signatura Monoline Regular'), local('Signatura-Monoline-Regular'),
+      url('/assets/SignaturaMonolineScript-Regular.woff2') format('woff2'),
+      url('/assets/SignaturaMonolineScript-Regular.woff') format('woff'),
+      url('/assets/SignaturaMonolineScript-Regular.ttf') format('truetype');
+}
+
+/*SELECTORES 
+
+Universal       - * - todos los elementos
+* { }
+
+de tipo         - tipo de elementos - h1 etc.
+h1 { }
+
+clases          - .NombreDeLaClase
+
+ID              - #NombreId 
+
+por atributo    - [atributo="valor"]
+
+descendiente    - por ejemplo, los elementos p que estan adentro de un h2
+h2 p { }
+
+pseudo clases   -
+*/
