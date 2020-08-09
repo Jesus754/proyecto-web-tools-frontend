@@ -1,0 +1,54 @@
+<section class = "padre">
+    <cdk-virtual-scroll-viewport itemSize = "7" class = "list-container list-group">
+
+         <div class = "list-group-item"*cdkVirtualFor = "let pizza of pizzas; let i = index; let count = count">
+            <!-- Card -->
+            <div class="card booking-card card-bock">
+
+                
+               
+            
+                <!-- Card content -->
+                <div class="card-body">
+            
+                <!-- Title -->
+                <h4 class="card-title font-weight-bold"><a> {{pizza.nombre }}</a></h4>
+                <!-- Card image 
+                <div class="view overlay">
+                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/8-col/img (5).jpg" alt="Card image cap">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                    </div>-->
+                <!-- Data -->
+                <ul class="list-unstyled list-inline rating mb-0">
+                    <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
+                    <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+                    <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+                    <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+                    <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
+                    <li class="list-inline-item"><p class="text-muted">4.5 (413)</p></li>
+                </ul>
+                <p class="mb-2 text-descripcion">$ • Precio: {{pizza.precio }} </p>
+                <!-- Text -->
+                <p class="card-text text-descripcion">{{pizza.descripcion}} </p>
+                <hr class="my-4">
+                <p class="lead"><strong>AGREGAR AL PEDIDO</strong></p>
+               
+                <!-- Button -->
+                <button class="btn btn-dark"  type="button"  (click) = "agregarAPedido(pizza)">AGREGAR</button>
+            
+                </div>
+            
+            </div>
+        </div> 
+    </cdk-virtual-scroll-viewport>
+    <app-aside class = "aside-container">
+        <app-encargar>
+          
+        </app-encargar>
+        
+    </app-aside>
+    
+</section>
+

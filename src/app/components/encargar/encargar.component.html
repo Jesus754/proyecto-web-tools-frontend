@@ -1,0 +1,91 @@
+<div class = "detalle">
+    Detalle de pedido:
+</div>
+
+<div class = "container" >
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-bordered table-striped mb-0">
+      <thead>
+        <tr>
+          <th scope="col">Producto</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr style="width:100%; min-height: 30px;" *ngFor= "let pedido of pedidoActual">
+            <td>{{pedido.nombre}}</td>
+            <td>{{pedido.cantidad}}</td>
+            <td>{{pedido.total}}</td>
+        </tr>
+       
+    </tbody>
+    </table>
+</div>
+</div>
+
+<div class = "detalle">
+    Total: {{total}}
+    
+</div>
+<button class = "btn-dark boton"  type="button">COMPRAR</button>
+
+
+
+
+<!--<div class="container cont">
+    <div class = "detalle">
+        Detalle de pedido:
+    </div>
+    <div class = "lista">
+	<div class="row">
+		<div class="col">
+			<table class="table table-striped">
+                
+				<thead>
+					<tr>
+						<th>Producto</th>
+						<th>Cantidad</th>
+						<th>Precio</th>
+					</tr>
+                </thead>
+                
+				<tbody>
+                    
+                    <ng-container >
+                        
+                        <tr style="width:100%; min-height: 30px;" *ngFor= "let pedido of pedidoActual">
+                            <td>{{pedido.nombre}}</td>
+                            <td>{{pedido.cantidad}}</td>
+                            <td>{{pedido.precio}}</td>
+                        
+                        </tr>
+                    </ng-container>
+                
+                </tbody>
+
+           
+			</table>
+		</div>
+		
+    </div>
+</div>-->
+
+
+<!--
+      <cdk-virtual-scroll-viewport
+                        itemSize="2"
+                        style="height: 300px;"
+                    >
+                 </cdk-virtual-scroll-viewport>
+<ul *ngFor = "let pedido of pedidoActual">
+   
+    
+        <div>
+                <li>{{pedido.nombre}}</li>
+                <li>{{pedido.precio}}</li>
+        </div>
+
+</ul>
+-->

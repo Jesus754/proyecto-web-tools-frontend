@@ -6,7 +6,7 @@ export interface JwtResponseI {
         direcicon:string,
         telefono:string,
         email:string,
-        token:string,
-        expiresIn:string
     }
+    token:string,
+    expiresIn:string
 }

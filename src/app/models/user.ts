@@ -8,5 +8,6 @@ export interface UsuarioI {
     rol: string,
     img:string,
     google:string,
-    contraseña:string
+    contraseña:string,
+    token:string
 }

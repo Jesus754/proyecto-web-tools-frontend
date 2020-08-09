@@ -15,11 +15,11 @@ export class AuthService {
   constructor( private httpClient: HttpClient) { }
 
   registro( user: UsuarioI ): Observable<JwtResponseI> {
-    return this.httpClient.post<JwtResponseI>(`${this.AUTH_SERVER}/registro`, 
+    return this.httpClient.post<JwtResponseI>(`${this.AUTH_SERVER}/usuario`, 
     user).pipe(tap( 
       (res:JwtResponseI ) => {
         if (res) {
-          this.saveToken(res.usuario.token,res.usuario.expiresIn);
+          this.saveToken(res.token,res.expiresIn);
         }
       }
     ))
@@ -31,8 +31,8 @@ export class AuthService {
     .pipe(tap( 
       (res:JwtResponseI) => {
         if (res) {
-          console.log(res);
-          this.saveToken(res.usuario.token,res.usuario.expiresIn);
+          console.log("Response frontend", res);
+          this.saveToken(res.token,res.expiresIn);
         }
       }
     ))

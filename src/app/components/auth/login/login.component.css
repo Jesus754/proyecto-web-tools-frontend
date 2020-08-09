@@ -4,7 +4,7 @@
 } */
 
 .sidebar{
-  margin-top: 10%;
+  margin-top: 0%;
   margin-left: 0%;
   height: 100%;
   align-content: center;
@@ -15,7 +15,7 @@
   margin-top: auto;
   margin-bottom: auto;
   width: 400px;
-  background-color: rgba(0,0,0,0.9) !important;
+  background-color: rgba(0,0,0,0.6) !important;
 }
   
 .social_icon span{
