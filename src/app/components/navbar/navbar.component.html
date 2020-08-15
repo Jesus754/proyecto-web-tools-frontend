@@ -1,22 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-light "style="background-color: #e3f2fd;" routerLinkActive = "active">
-    <a class="navbar-brand" [routerLink] = "['home']">Pizzas italianas</a>
+<nav class="navbar navbar-expand-lg navbar-dark "style="font-family: Times New Roman; background-color: rgb(216, 91, 19,0.7); !important;" routerLinkActive = "active">
+    <a class="navbar-brand" [routerLink] = "['home']" *ngIf="!estaAutenticado()">Iniciar Sesion</a>
+    <a class="navbar-brand" [routerLink] = "['precios']" *ngIf="estaAutenticado()">Encargar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" [routerLink] = "['registrarse']">Registrarse</a>
+          <a class="navbar-brand"  [routerLink] = "['registrarse']" *ngIf="!estaAutenticado()" >Registrarse</a>
         </li>
+        <!--<li class="nav-item">
+          <a class="navbar-brand" [routerLink] = "['precios']">Encargar</a>
+        </li>-->
         <li class="nav-item">
-          <a class="nav-link" [routerLink] = "['precios']">Pedidos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink] = "['protegida']">Protegida</a>
+          <a class="navbar-brand" [routerLink] = "['protegida']" *ngIf="estaAutenticado()">Mis Pedidos</a>
         </li>
       </ul>
-      <span class="navbar-text">
-        Navbar text with an inline element
-      </span>
     </div>
   </nav>

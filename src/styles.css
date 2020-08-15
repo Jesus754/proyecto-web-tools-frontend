@@ -2,10 +2,11 @@
     margin-top: 40px;
 }
 body { 
-
+  width: auto;
+  height: auto;
   background: url(./assets/fondo.jpg) no-repeat center top;
   background-size: cover;
-  background-color:transparent;
+  background-color:rgb(29, 29, 29)
   
 }
 

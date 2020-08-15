@@ -4,12 +4,15 @@ import { UsuarioI} from '../models/user';
 import { JwtResponseI } from '../models/jwt-response';
 import { tap } from 'rxjs/operators';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { JwtHelperService } from "@auth0/angular-jwt";
+
 
 @Injectable()
 export class AuthService {
 
   AUTH_SERVER: string = 'http://localhost:3000/api';
   authSubject = new BehaviorSubject(false);
+  helper=new JwtHelperService();
   private token : string;
 
   constructor( private httpClient: HttpClient) { }
@@ -55,4 +58,13 @@ export class AuthService {
     }
     return this.token;
   }
+
+  loggedIn() {
+    const token = localStorage.getItem('ACCESS_TOKEN');
+    console.log("Autenticado",!this.helper.isTokenExpired(token));
+    return !this.helper.isTokenExpired(token);
+  }
+ 
+  
+
 }

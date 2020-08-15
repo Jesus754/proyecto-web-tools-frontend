@@ -53,6 +53,7 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     ScrollingModule,
 
+
     APP_ROUTING
   ],
   providers: [ 

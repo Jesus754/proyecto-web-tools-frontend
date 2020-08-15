@@ -4,8 +4,13 @@
     float:left;
     height: 450px;
     width:68%;
-    border: 5px solid green;
+    border: 5px solid rgb(216, 91, 19);;
     color:rgb(250, 35, 32);
+    -webkit-box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
+    -moz-box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
+    box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
+    
+
     
   }
   
@@ -51,8 +56,10 @@
       height: 450px;
       background-color: white;
       border-color:black;
-      border: 5px solid red;
-      box-shadow: 10px -10px green;
+      border: 5px solid rgb(216, 91, 19);;
+      -webkit-box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
+      -moz-box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
+       box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
     }
 
     .text-descripcion{
