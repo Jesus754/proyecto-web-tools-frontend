@@ -14,7 +14,7 @@ export class AuthService {
   authSubject = new BehaviorSubject(false);
   helper=new JwtHelperService();
   private token : string;
-
+  private usuarioLoggeado;
   constructor( private httpClient: HttpClient) { }
 
   registro( user: UsuarioI ): Observable<JwtResponseI> {
@@ -35,6 +35,8 @@ export class AuthService {
       (res:JwtResponseI) => {
         if (res) {
           console.log("Response frontend", res);
+          this.usuarioLoggeado = res.usuario;
+          console.log("usuario loggeado",this.usuarioLoggeado )
           this.saveToken(res.token,res.expiresIn);
         }
       }
@@ -65,6 +67,7 @@ export class AuthService {
     return !this.helper.isTokenExpired(token);
   }
  
-  
-
+  getUsuarioLoggeado() {
+     return this.usuarioLoggeado;
+  }
 }

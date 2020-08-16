@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PedidoService } from 'src/app/services/pedido.service';
-
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-encargar',
   templateUrl: './encargar.component.html',
@@ -11,7 +11,7 @@ export class EncargarComponent  {
   
   pedidoActual = [];
   total = 0;
-  constructor(private pedidoService: PedidoService) { }
+  constructor(private pedidoService: PedidoService, private router: Router) { }
 
   ngOnInit(): void {
      this.pedidoService.pedidoActual.subscribe( (arreglo) => {
@@ -23,22 +23,22 @@ export class EncargarComponent  {
      }
     );
   }
-  
+
+
+  realizarCompra() {
+    // nombre, cantidad, -Agregar total al backend -
+    this.pedidoService.crearPedido(this.pedidoActual).subscribe( 
+      (res) => { 
+        if (res) 
+          this.router.navigateByUrl('/auth');
+        else
+          err => console.log(err)
+    });
+    
+   
+  }
 
 
   
 
 }
-/** if (dx != -1){
-        console.log("Entro al if");
-        let cantidad = this.pedidoActual[dx].cantidad;
-        let precio = this.pedidoActual[dx].precio;
-        this.pedidoActual[dx].cantidad = cantidad + 1;
-        this.pedidoActual[dx].precio = this.pedidoActual[dx].precio  + precio 
-      }
-      else{
-        
-        pizza.cantidad = 1;
-        this.pedidoActual.push(pizza);
-        console.log("entro al else", this.pedidoActual.length);
-      } */

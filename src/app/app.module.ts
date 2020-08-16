@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -24,12 +25,13 @@ import { RegistroComponent} from './components/auth/registro/registro.component'
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { PreciosComponent } from './components/precios/precios.component';
-import { ProtegidaComponent } from './components/protegida/protegida.component';
 import { VirtualComponent } from './components/virtual/virtual.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { EncargarComponent } from './components/encargar/encargar.component';
-import { CommonModule } from '@angular/common';
+
+
+import { AuthGuard } from './components/auth/guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,6 @@ import { CommonModule } from '@angular/common';
     NavbarComponent,
     HomeComponent,
     PreciosComponent,
-    ProtegidaComponent,
     VirtualComponent,
     AsideComponent,
     PedidoComponent,
@@ -59,7 +60,8 @@ import { CommonModule } from '@angular/common';
   providers: [ 
     AuthService,
     PedidoService,
-    EncargarComponent
+    EncargarComponent,
+    AuthGuard,
 
   ],
   bootstrap: [AppComponent]
