@@ -27,18 +27,40 @@ export class EncargarComponent  {
 
   realizarCompra() {
     // nombre, cantidad, -Agregar total al backend -
+    if (this.pedidoActual.length>0 ) {
     this.pedidoService.crearPedido(this.pedidoActual).subscribe( 
       (res) => { 
-        if (res) 
-          this.router.navigateByUrl('/auth');
+        if (res){
+          this.router.navigateByUrl('/encargo');
+          this.pedidoActual = [];
+          this.total = 0;
+        }
         else
           err => console.log(err)
     });
+    } 
     
-   
   }
 
+  eliminarProducto(pedido) {
+    console.log(pedido.nombre);
+     for (var i=0; i< this.pedidoActual.length;i++) {
+       if (this.pedidoActual[i].nombre === pedido.nombre) {
+         if ( this.pedidoActual[i].cantidad > 1){
+            this.pedidoActual[i].cantidad = this.pedidoActual[i].cantidad - 1;
+            this.pedidoActual[i].total = this.pedidoActual[i].total - this.pedidoActual[i].precio;
+          }
+          else {
+            this.pedidoActual.splice(i,1);
+          }
 
+       }
+     }
+     this.total=0;
+     this.pedidoActual.forEach(element => {
+      this.total = this.total + element.total;
+    });
+  }
   
 
 }

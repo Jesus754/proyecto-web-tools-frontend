@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
+import { MatIconModule} from '@angular/material/icon'
 
 
 
@@ -32,6 +33,7 @@ import { EncargarComponent } from './components/encargar/encargar.component';
 
 
 import { AuthGuard } from './components/auth/guards/auth.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -53,9 +55,13 @@ import { AuthGuard } from './components/auth/guards/auth.guard';
     FormsModule,
     HttpClientModule,
     ScrollingModule,
+    MatIconModule,
 
 
-    APP_ROUTING
+    APP_ROUTING,
+
+
+    BrowserAnimationsModule
   ],
   providers: [ 
     AuthService,

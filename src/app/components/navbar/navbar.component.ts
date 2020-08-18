@@ -17,4 +17,12 @@ export class NavbarComponent implements OnInit {
   estaAutenticado() {
     return this.authService.loggedIn();
   }
+
+  logOut() {
+    return this.authService.logout();
+  }
+
+  getUsuarioLoggeado() {
+    return this.authService.getUsuarioLoggeado();
+  }
 }

@@ -1,13 +1,18 @@
-import { UsuarioI } from './user';
+export interface Pedidos {
 
-export interface Pedidos{
-    id: Number,
-    usuario:UsuarioI;
-    pizzas: [
-        {
-            nombre:String,
-            cantidad:Number,
-        }
-    ]
-    total:Number,
+    pedidos: [
+        {   
+            user_id: String,
+            estado: String,
+            pedido: [{
+                nombre: String,
+                precio: number,
+                cantidad: number,
+                total: number
+            }]
+            total: number,
+            fecha: String
+        }]
+
+
 }

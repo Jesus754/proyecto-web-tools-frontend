@@ -1,7 +1,8 @@
 .detalle{
         border-color: red white green white;
         border-width: 10px;
-        border-style: solid; 
+        border-style: solid;
+        color:black;
 }
 
 /*.cont{
@@ -14,13 +15,13 @@
 }
  */
 
-
 .boton {
     margin-top:10px;
     height: 10%;
     width: 97%;
     margin:5px;
 }
+
 
 .my-custom-scrollbar {
     position: relative;

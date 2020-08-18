@@ -7,19 +7,17 @@
   margin-top: 2%;
   margin-left: 10%;
   height: 100%;
-  align-content: center;
-  display:inline-table;
-  -webkit-box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
-      -moz-box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
-       box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
 }
   
 .card{
   height: 340px;
-  margin-top: auto;
+  margin-top: 10px;
   margin-bottom: auto;
-  width: 400px;
+  width: 600px;
   background-color: rgba(0,0,0,0.6) !important;
+  -webkit-box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
+  -moz-box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
+   box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
 }
   
 .social_icon span{
@@ -73,7 +71,7 @@ input:focus{
   .login_btn{
   color: black;
   background-color: rgb(216, 91, 19);
-  width: 100px;
+  width: 150px;
   }
   
   .login_btn:hover{

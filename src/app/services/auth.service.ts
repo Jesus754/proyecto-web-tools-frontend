@@ -10,11 +10,11 @@ import { JwtHelperService } from "@auth0/angular-jwt";
 @Injectable()
 export class AuthService {
 
-  AUTH_SERVER: string = 'http://localhost:3000/api';
+  //AUTH_SERVER: string = 'http://localhost:3000/api';
+  AUTH_SERVER: string = 'http://backend-taller-web.herokuapp.com/api';
   authSubject = new BehaviorSubject(false);
   helper=new JwtHelperService();
   private token : string;
-  private usuarioLoggeado;
   constructor( private httpClient: HttpClient) { }
 
   registro( user: UsuarioI ): Observable<JwtResponseI> {
@@ -34,9 +34,6 @@ export class AuthService {
     .pipe(tap( 
       (res:JwtResponseI) => {
         if (res) {
-          console.log("Response frontend", res);
-          this.usuarioLoggeado = res.usuario;
-          console.log("usuario loggeado",this.usuarioLoggeado )
           this.saveToken(res.token,res.expiresIn);
         }
       }
@@ -68,6 +65,6 @@ export class AuthService {
   }
  
   getUsuarioLoggeado() {
-     return this.usuarioLoggeado;
+     return this.helper.decodeToken(this.getToken());
   }
 }

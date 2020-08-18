@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { UsuarioI } from '../models/user';
 import { Pedidos } from '../models/pedido-response';
 import { createPedidoResponseI } from '../models/create-pedido-response';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpParams} from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
 
@@ -11,26 +11,34 @@ import { AuthService } from '../services/auth.service';
 export class PedidoService {
 
 
-  AUTH_SERVER: string = 'http://localhost:3000/api';
+  //AUTH_SERVER: string = 'http://localhost:3000/api';
+  AUTH_SERVER: string = 'http://backend-taller-web.herokuapp.com/api';
   authSubject = new BehaviorSubject(false);
 
   pedidoActual = new EventEmitter();
   
+  allPedidos = new EventEmitter();
+
   constructor( private httpClient: HttpClient , private authService : AuthService) { }
 
 
-  getPedidos( user: UsuarioI ): Observable<Pedidos> {
-    return this.httpClient.post<Pedidos>(`${this.AUTH_SERVER}/usuario`, user.id).pipe(tap( 
-      (res:Pedidos ) => {
-        if (res) {
-           
-        }
-      }, 
-      (err) => {
-        console.log("Ocurrio error al al obtener pedidos",err);
+  getPedidos(): Observable<Pedidos> {
+    let usuarioLoggeado  = this.authService.getUsuarioLoggeado();
+    console.log("usuario loggeado", usuarioLoggeado);
+    if (!(usuarioLoggeado === undefined)) {
+      const url  = `${this.AUTH_SERVER}/usuario/${usuarioLoggeado.data._id}/pedidos`
+      console.log("get a ", url);
+      return this.httpClient.get<Pedidos>(url).pipe(tap( 
+        (res:Pedidos ) => {
+          if (res) {       
+          }
+        }, 
+        (err) => {
+          console.log("Ocurrio error al al obtener pedidos",err);
 
-      }
-    ))
+        }
+      ))
+    }
   }
 
   crearPedido(pedidoActual) : Observable<createPedidoResponseI> {

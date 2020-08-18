@@ -1,1 +1,43 @@
-<p>pedido works</p>
+<div class="tabla-container">
+
+  <div class="detalle">
+    Pedidos realizados
+  </div>
+
+  <div class="container">
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+      <table class="table table-bordered table-striped mb-0">
+        <thead>
+          <tr>
+            <th scope="col">Fecha</th>
+            <th scope="col">Productos</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="width:100%; min-height: 30px;" *ngFor="let data of allPedidos">
+            <td>{{data.fecha}}</td>
+            <table class="table table-bordered table-striped mb-5">
+            <thead>
+              <th scope="col">nombre</th>
+              <th scope="col">precio</th>
+              <th scope="col">cantidad</th>
+            </thead>
+            <tbody>
+              <tr style="width:20%; min-height: 10px;" *ngFor="let pedido of data.pedido">
+                <td>{{pedido.nombre}}</td>
+                <td>{{pedido.precio}}</td>
+                <td>{{pedido.cantidad}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <td>{{data.total}}</td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>

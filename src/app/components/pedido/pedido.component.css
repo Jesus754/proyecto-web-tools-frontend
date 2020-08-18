@@ -1,0 +1,48 @@
+.detalle{
+    border-color: red white green white;
+    border-width: 10px;
+    border-style: solid; 
+}
+
+/*.cont{
+margin:0%;
+width:100%;
+height: 440px;
+border: 5px solid white;
+color:rgb(250, 35, 32);
+
+}
+*/
+
+
+.boton {
+margin-top:10px;
+height: 10%;
+width: 97%;
+margin:5px;
+}
+
+.my-custom-scrollbar {
+position: relative;
+height: 700px;
+width: 100%;
+overflow: auto;
+margin-top: 20px;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
+
+.tabla-container {
+    margin-top:10px;
+    margin-left:10px;
+    margin-right:10px;
+    width:99%;
+    height: 850px;
+    background-color: white;
+    border-color:black;
+    border: 5px solid rgb(216, 91, 19);;
+    -webkit-box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
+    -moz-box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
+     box-shadow: 7px -2px 20px -1px rgba(255,255,255,1);
+  }
