@@ -22,7 +22,7 @@ export class RegistroComponent implements OnInit {
      this.authService.registro(form.value).subscribe(
        (res) => {
          if (res) {
-           this.router.navigateByUrl("/auth");
+           this.router.navigateByUrl("/home");
          } 
        }, (err) => {
          console.log("Ocurrio un error",err);
