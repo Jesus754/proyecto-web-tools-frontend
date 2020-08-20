@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
 import { MatIconModule} from '@angular/material/icon'
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -56,6 +57,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     ScrollingModule,
     MatIconModule,
+    MatFormFieldModule,
 
 
     APP_ROUTING,

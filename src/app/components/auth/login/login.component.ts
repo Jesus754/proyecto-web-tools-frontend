@@ -12,6 +12,8 @@ import { AuthService } from './../../../services/auth.service';
 })
 export class LoginComponent implements OnInit,OnDestroy {
 
+  error;
+  mensaje;
   constructor(  private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
@@ -24,15 +26,18 @@ export class LoginComponent implements OnInit,OnDestroy {
     console.log(form.value);
 
     this.authService.login(form.value).subscribe ((res) => {
-      if (res) 
         this.router.navigateByUrl('/auth');
-      else
-        err => console.log(err)
     },
      (err) => {
       console.log("Ocurrio un error", err);
+      this.error = true;
+      this.mensaje = err.error.err.mensaje;
     }
     )
+  }
+
+  isError() {
+    return this.error;
   }
 
 }

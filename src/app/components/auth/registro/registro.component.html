@@ -8,40 +8,43 @@
 				<form #frmRegister= "ngForm" class = "register-container" (ngSubmit) = "onRegister(frmRegister)">
                     <div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
+							<span class="input-group-text"><span  class="material-icons">account_circle</span></span>
 						</div>
 						<input type="text" name="nombre" class="form-control" placeholder="Nombre" ngModel required>
                     </div>
                     <div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
+							<span class="input-group-text"><span  class="material-icons">account_circle</span></span>
 						</div>
 						<input type="text" name="apellido" class="form-control" placeholder="Apellido" ngModel required>
                     </div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
+							<span class="input-group-text"><span  class="material-icons">mail</span></span>
 						</div>
 						<input type="text" name="email" class="form-control" placeholder="Email" ngModel required>
                     </div>
                     <div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
+							<span class="input-group-text"><span  class="material-icons">commute</span></span>
 						</div>
 						<input type="text" name="direccion" class="form-control" placeholder="Direccion" ngModel required>
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
+							<span class="input-group-text"><span  class="material-icons">perm_phone_msg</span></span>
 						</div>
 						<input type="text" name="telefono" class="form-control" placeholder="Telefono" ngModel required>
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
+							<span class="input-group-text"><span  class="material-icons">https</span></span>
 						</div>
-						<input type="current-password" name="contraseña" class="form-control" placeholder="Contraseña" ngModel required>
-                    </div>
+						<input type="password" name="contraseña" class="form-control" placeholder="Contraseña" ngModel required>
+					</div>
+					<mat-error *ngIf="isError()">
+						{{mensaje}}
+					</mat-error>  
                <!--     <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>

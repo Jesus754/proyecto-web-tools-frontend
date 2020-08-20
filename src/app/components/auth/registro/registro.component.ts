@@ -10,6 +10,8 @@ import { trimTrailingNulls } from '@angular/compiler/src/render3/view/util';
 })
 export class RegistroComponent implements OnInit {
 
+  error;
+  mensaje;
   constructor(private authService:AuthService, private router:Router) { }
 
   ngOnInit(): void {
@@ -21,11 +23,16 @@ export class RegistroComponent implements OnInit {
        (res) => {
          if (res) {
            this.router.navigateByUrl("/auth");
-         } else
-            err => console.log(err);
+         } 
        }, (err) => {
          console.log("Ocurrio un error",err);
+         this.error=true;
+         this.mensaje = err.error.err.errors.email.message;
        }
      )
+  }
+
+  isError() {
+    return this.error;
   }
 }
