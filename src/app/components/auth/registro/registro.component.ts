@@ -27,7 +27,7 @@ export class RegistroComponent implements OnInit {
        }, (err) => {
          console.log("Ocurrio un error",err);
          this.error=true;
-         this.mensaje = err.error.err.errors.email.message;
+         this.mensaje = err.error.err.message;
        }
      )
   }
