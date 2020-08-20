@@ -52,7 +52,7 @@ export class PedidoService {
       delete elemento["descripcion"];
     })
     data["total_pedido"] = total;
-    data["user_id"] = usuarioLoggeado._id;
+    data["user_id"] = usuarioLoggeado.data._id;
     console.log(data);
     return this.httpClient.post<createPedidoResponseI>(`${this.AUTH_SERVER}/usuario/pedido`, data).pipe(tap( 
       (res ) => {
