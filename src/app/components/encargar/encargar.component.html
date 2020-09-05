@@ -1,34 +1,40 @@
 <div class = "detalle">
     Detalle de pedido:
 </div>
-
-<div class = "container" >
-    <div class="table-wrapper-scroll-y my-custom-scrollbar">
-    <table class="table table-bordered table-striped mb-0">
-      <thead>
-        <tr>
-          <th scope="col">Producto</th>
-          <th scope="col">Cantidad</th>
-          <th scope="col">Precio</th>
-          <th scope="col">Eliminar</th>
-        </tr>
-      </thead>
-      <tbody>
+    <div class = "container">
+    <div  >
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-bordered table-striped mb-0">
+        <thead>
+            <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr style="width:100%; min-height: 1px;" *ngFor= "let pedido of pedidoActual">
+                <td>{{pedido.nombre}}</td>
+                <td>{{pedido.cantidad}}</td>
+                <td>{{pedido.total}}</td>
+                <td>
+                <div>
+                    <button class="btn btn-danger boton-eliminar btn-sm" value = "Eliminar"  type="button"  (click) = "eliminarProducto(pedido)">Eliminar</button>
+                </div>
+            </td>
+            </tr>
         
-        <tr style="width:100%; min-height: 1px;" *ngFor= "let pedido of pedidoActual">
-            <td>{{pedido.nombre}}</td>
-            <td>{{pedido.cantidad}}</td>
-            <td>{{pedido.total}}</td>
-            <td>
-            <div>
-                <button class="btn btn-danger boton-eliminar btn-sm" value = "Eliminar"  type="button"  (click) = "eliminarProducto(pedido)">Eliminar</button>
-            </div>
-        </td>
-        </tr>
-       
-    </tbody>
-    </table>
+        </tbody>
+        </table>
+      
+    </div>
+    <div class = "imagen" >
+        <img src="../../../assets/aeae4ead932a81071dec412d33491acd.png">
+    </div>
 </div>
+    
 </div>
 
 <div class = "detalle">
