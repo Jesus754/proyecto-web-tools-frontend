@@ -18,18 +18,24 @@ export class RegistroComponent implements OnInit {
   }
 
   onRegister(form): void {
-     console.log("Datos del formulario",form.value );
-     this.authService.registro(form.value).subscribe(
-       (res) => {
-         if (res) {
-           this.router.navigateByUrl("/home");
-         } 
-       }, (err) => {
-         console.log("Ocurrio un error",err);
-         this.error=true;
-         this.mensaje = err.error.err.message;
-       }
-     )
+     const contraseña = new String(form.value.contraseña)
+     if (contraseña.length < 2){
+        this.error=true;
+        this.mensaje = "La contraseña debe tener al menos 3 caracteres";
+     } else {
+      this.authService.registro(form.value).subscribe(
+        (res) => {
+          if (res) {
+            this.router.navigateByUrl("/home");
+          } 
+        }, (err) => {
+          console.log("Ocurrio un error",err);
+          this.error=true;
+          this.mensaje = err.error.err.message;
+        }
+      )
+     }
+    
   }
 
   isError() {
